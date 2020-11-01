@@ -1,0 +1,115 @@
+.header1 {
+    /*margin-left: 30px;*/
+    font-weight: 700;
+    color: black;
+    margin: 15px;
+    font-size: 44px;
+}
+
+.p1 {
+    /*margin-left: 30px;*/
+    font-weight: 400;
+    font-size: 16px;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    margin: 0px;
+    padding: 0px;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+select:focus {
+    background-color: #f7f7f7;
+    outline-color: darkgrey;
+}
+
+
+/* will come back to this
+input[type=checkbox]#remember:checked {
+    background: #ad42f5;
+}
+*/
+
+input {
+    margin-left: 30px;
+}
+
+.divider1 {
+    align-self: center;
+    background-color: lightgray;
+    height: 1px;
+    width: 90%;
+    margin-bottom: 20px;
+    padding: 0px;
+}
+
+.centerDiv {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+    height: 55%;
+}
+
+.roundedBox {
+    background-color: black;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+select {
+    width: 100%;
+    cursor: pointer;
+}
+
+.register {
+    margin-top: 20px;
+    padding: 8px 32px 8px;
+    cursor: pointer;
+}
+
+.register:hover {
+    opacity: 0.7;
+}
+
+#remember {
+    padding: 0px;
+    cursor: pointer;
+}
+
+.close {
+    position: absolute;
+    /*don't interact*/
+    align-self: flex-end;
+    margin: 10px;
+}
+
+.close:hover {
+    cursor: pointer;
+    opacity: 0.5;
+}
+
+.signUpForm {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    padding: 0px;
+    border: solid 2px;
+    border-radius: 12px;
+    border-color: lightgrey;
+    height: 400px;
+    min-width: 300px;
+    width: 50%;
+    max-width: 500px;
+    /*add vertical responsiveness*/
+    background-color: #fefefe;
+    margin: 10px auto;
+}

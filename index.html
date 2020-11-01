@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="script/script.js" defer></script>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/5558145c29.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/form.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>SpaceY</title>
+</head>
+
+<body>
+    <header>
+        <div class="topNav">
+            <div class="logo">
+                <a href="index.html">
+                    <h1 class="animate__pulse">SpaceY</h1>
+                </a>
+            </div>
+            <div class="rightBox">
+                <div class="login" onclick="document.getElementById('id01').style.display='block'">
+                    <p>Log in</p>
+                </div>
+                <div onclick="openMenu()">
+                    <i class="fa fa-gear fa-2x menuBtn"></i>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hMain" id="headerMain">
+            <div class="mainContent">
+                <h2>Login to access</h2>
+                <p>
+
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Velit id sed in, quos culpa tenetur minima aperiam perferendis nostrum. Quisquam autem molestiae accusamus velit voluptate natus fugiat eum atque voluptas?Lorem ipsum dolor sit amet, consectetur
+                    adipisicing elit. Corrupti deleniti sapiente hic, ad temporibus alias non voluptates blanditiis debitis dolores excepturi! Perspiciatis, nemo. Sint laboriosam consectetur labore officiis, beatae libero!
+                </p>
+            </div>
+        </div>
+
+        <div class="modal" id="id01">
+            <form class="animate__animated animate__pulse signUpForm" autocomplete="on">
+
+                <div onclick="document.getElementById('id01').style.display='none'" class="close"><i class="fa fa-close"></i></div>
+
+                <h2 class="header1">Log in</h2>
+                <div class="divider1"></div>
+                <div class="centerDiv">
+                    <div>
+                        <label for="uName">
+                            <p class="p1">Username</p>
+                        </label>
+                        <input type="text" placeholder="Enter Username" name="uName" id="uName" required maxlength="24" autofocus>
+                        <!--only clientside checks-->
+                    </div>
+
+                    <div>
+                        <label for="email">
+                            <p class="p1">Email Address</p>
+                        </label>
+                        <input type="email" placeholder="Enter Email" name="email" id="email" required maxlength="50">
+
+                    </div>
+                    <div>
+                        <label for="psw">
+                            <p class="p1">Password</p>
+                        </label>
+                        <input type="password" placeholder="Enter Password" name="psw" id="psw" required minlength="8">
+                    </div>
+                    <div>
+                        <label for="gender">
+                            <p class="p1">Gender</p>
+                        </label>
+                        <select name="gender" id="gender" required>
+                            <option value=""></option>
+                            <!--placeholder-->
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="remember">Remember me</label>
+                        <input type="checkbox" name="remember" id="remember">
+                    </div>
+                </div>
+                <button type="submit" class="register roundedBox">Register Now</button>
+            </form>
+            <!--JS here-->
+        </div>
+
+        <div class="sideNav" id="animateNav">
+            <div class="sideNavTop">
+                <!--repeated, inefficient. Try using z-index if it works with flex-->
+                <div class="rightBox">
+                    <div class="login" onclick="document.getElementById('id01').style.display='block'">
+                        <p>Log in</p>
+                    </div>
+                    <div onclick="openMenu()">
+                        <i class="fa fa-gear fa-2x menuBtn"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="menuSide">
+                <ul>
+                    <li>
+                        <a href="#">Account</a>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a href="#">Trips</a>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a href="#">Booking</a>
+                    </li>
+                    <div class="divider"></div>
+                    <li>
+                        <a href="#">About</a>
+                    </li>
+                    <div class="divider"></div>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <main>
+
+    </main>
+</body>
+
+</html>

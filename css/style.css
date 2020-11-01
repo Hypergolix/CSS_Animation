@@ -1,0 +1,300 @@
+@font-face {
+    font-family: 'Eurostile';
+    src: URL('fonts/Eurostile.ttf') format('truetype');
+}
+
+* {
+    font-family: "Eurostile";
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+/*
+main {
+    height: 1200px;
+}*/
+
+header {
+    overflow-y: hidden;
+    /*would rather overflow-y worked here*/
+    overflow: hidden;
+    display: flex;
+    /* flex-flow: row nowrap;*/
+}
+
+h1 {
+    font-size: 44px;
+    color: white;
+    /*text-decoration: underline;*/
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+h1:hover {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@keyframes spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    to {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+}
+
+@keyframes reversespin {
+    from {
+        -webkit-transform: rotate(-90deg);
+        transform: rotate(-90deg);
+    }
+    to {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+}
+
+.rightBox {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
+.rightBox p {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+
+.logo {
+    margin-left: 100px;
+    cursor: pointer;
+    letter-spacing: 1px;
+}
+
+.login {
+    display: flex;
+    width: 96px;
+    height: 32px;
+    border-radius: 16px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.login:hover {
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.topNav {
+    /*make sticky*/
+    position: absolute;
+    /*this^ allows my menu to overlap the navbar
+    remove to "push" navbar items*/
+    background-color: black;
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 60px;
+}
+
+
+/**/
+
+.menuBtn:hover {
+    cursor: pointer;
+    animation: spin 0.2s forwards;
+    opacity: 0.8;
+}
+
+.menuBtn {
+    /*would prefer lg variant but it's off center*/
+    color: white;
+    padding: 0px;
+    margin-right: 10px;
+    animation-name: reversespin;
+    animation-duration: 0.2s;
+}
+
+.sideNav {
+    /*display: none;*/
+    overflow-y: hidden;
+    overflow: hidden;
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    margin-left: auto;
+    padding: 0px;
+    width: 0px;
+    height: 100vh;
+    background-color: grey;
+    transition: width 0.25s ease-in;
+    -webkit-transition: width 0.25s ease-in;
+}
+
+.sideNavTop {
+    white-space: nowrap;
+    /*overflow: hidden; */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 200px;
+    /*change from 100% to 200px for different, but less fluid animation*/
+    height: 60px;
+}
+
+.divider {
+    background-color: lightgrey;
+    width: 80%;
+    height: 0.25px;
+    margin-right: 15px;
+}
+
+
+/*small bug where the menu items jump a few pixels into place
+probably due to the sideNavTop not smoothly transistioning into place anymore, not sure why
+fixed. saved for future reference
+*/
+
+
+/*could add cooldown to gear animation as it triggers as soon as the menu opens
+currently some things are off screen but hidden, a better way to do this would be to display none or hide 
+instead of hiding overflow
+
+or keep the login and gear on top with higher z-index...
+*/
+
+
+/*
+remove scroll on sidebar, probably adds/causes the jerky animation
+*/
+
+.menuSide {
+    overflow: hidden;
+    margin-top: 25px;
+    display: flex;
+    width: 100%;
+    height: 25%;
+    /*min height not working*/
+}
+
+.menuSide ul {
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.menuSide li {
+    overflow: hidden;
+    list-style: none;
+}
+
+.menuSide a {
+    overflow: hidden;
+    color: white;
+    font-size: 22px;
+    letter-spacing: 0.8px;
+    text-decoration: none;
+    margin-right: 15px;
+}
+
+a:hover {
+    opacity: 0.8;
+}
+
+
+/*add when header active the menu closes
+*/
+
+
+/* ">" affects other elements without relationship
+header:active>.sideNav {
+    width: 200px;
+    transition: width 0.25s ease-out;
+    -webkit-transition: width 0.25s ease-out;
+}
+*/
+
+.animation {
+    width: 200px;
+    transition: width 0.25s ease-out;
+    -webkit-transition: width 0.25s ease-out;
+}
+
+.hMain {
+    position: absolute;
+    /*absolute. For some reason relative breaks the side bar*/
+    top: 60px;
+    display: flex;
+    height: auto;
+    width: 100%;
+    justify-content: center;
+}
+
+.mainContent {
+    flex-direction: column;
+    position: relative;
+    display: flex;
+    width: 900px;
+    height: auto;
+    margin-top: 80px;
+}
+
+.mainContent p {
+    font-size: 20px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    padding-top: 60px;
+}
+
+
+/*below compensates for the dodgy element interaction*/
+
+@media only screen and ( max-width:1200px) {
+    .mainContent {
+        justify-content: flex-start;
+        margin: 80px 0px 0px 100px;
+        width: 50%;
+    }
+    .hMain {
+        justify-content: flex-start;
+    }
+}
+
+@media only screen and ( max-width:600px) {
+    .mainContent {
+        margin: 40px 0px 0px 50px;
+    }
+    .mainContent p {
+        font-size: 18px;
+    }
+    .logo {
+        margin-left: 50px;
+    }
+}

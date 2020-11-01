@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Sign Up</title>
+</head>
+
+<body>
+    <header>
+        <form id="signUpForm" autocomplete="on">
+            <h1>Sign Up</h1>
+            <div class="divider"></div>
+            <div class="centerDiv">
+                <div>
+                    <label for="uName"><p>Username</p></label>
+                    <input type="text" placeholder="Enter Username" name="uName" id="uName" required maxlength="24" autofocus>
+                    <!--only clientside checks-->
+                </div>
+
+                <div>
+                    <label for="email"><p>Email Address</p></label>
+                    <input type="email" placeholder="Enter Email" name="email" id="email" required maxlength="50">
+
+                </div>
+                <div>
+                    <label for="psw"><p>Password</p></label>
+                    <input type="password" placeholder="Enter Password" name="psw" id="psw" required minlength="8">
+                </div>
+                <div>
+                    <label for="gender"><p>Gender</p></label>
+                    <select name="gender" id="gender" required>
+                    <option value=""></option><!--placeholder-->
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Prefer not to say">Prefer not to say</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="remember">Remember me</label>
+                    <input type="checkbox" name="remember" id="remember">
+                </div>
+            </div>
+
+
+            <button type="submit" class="register roundedBox">Register Now</button>
+        </form>
+    </header>
+</body>
+
+</html>
